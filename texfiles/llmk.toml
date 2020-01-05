@@ -1,0 +1,14 @@
+latex = "lualatex"
+source = "survey_of_IoT_botnet_C2_server.tex"
+
+# sequence = ["latex", "bibtex", "dvipdf", "latex", "latex"]
+
+[programs.latex]
+command = "lualatex"
+opts = "-synctex=0"
+
+[programs.bibtex]
+command = "pbibtex"
+target = "DB.bib"
+opts = ["-kanji=utf8"]
+args = "%B"
