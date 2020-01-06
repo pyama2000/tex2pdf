@@ -1,7 +1,5 @@
 latex = "lualatex"
-source = "survey_of_IoT_botnet_C2_server.tex"
-
-# sequence = ["latex", "bibtex", "dvipdf", "latex", "latex"]
+source = "【調査】IoTボットネットのC2サーバに関して.tex"
 
 [programs.latex]
 command = "lualatex"

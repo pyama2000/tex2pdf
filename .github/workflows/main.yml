@@ -1,0 +1,29 @@
+name: TeX2PDF
+
+on:
+  push:
+    paths:
+    - texfiles/**.tex
+    - texfiles/llmk.toml
+    tags:
+      - v*.*.*
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    container: pyama0327/lualatex-haranoaji-llmk
+    steps:
+    - uses: actions/checkout@v1
+    - name: Create PDF from TeX files
+      run: llmk
+      working-directory: ./texfiles
+    - name: Remove temporary files
+      run: llmk --clean
+      working-directory: ./texfiles
+    - name: Set filename to $FILE_NAME
+      run: echo "::set-env name=FILE_NAME::`basename *.pdf .pdf`"
+      working-directory: ./texfiles
+    - name: Create release
+      uses: ./.github/actions/release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
