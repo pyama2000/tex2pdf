@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【調査】IoTボットネットのC2サーバに関して.tex"
+source="【調査】プロキシサーバのログを用いたRATの検知.tex"
 
 [programs.latex]
 command = "lualatex"
