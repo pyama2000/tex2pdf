@@ -48,44 +48,6 @@
 					"--clobber"
 				]
 			}
-			// {
-			// 	"name": "Step 1: ptex2pdf",
-			// 	"command": "ptex2pdf",
-			// 	"args": [
-			// 		"-l",
-			// 		"-ot",
-			// 		"-kanji=utf8 -synctex=1",
-			// 		"%DOCFILE%.tex"
-			// 	]
-			// },
-			// {
-			// 	"name": "Step 2: pbibtex",
-			// 	"command": "pbibtex",
-			// 	"args": [
-			// 		"%DOCFILE%",
-			// 		"-kanji=utf8"
-			// 	]
-			// },
-			// {
-			// 	"name": "Step 3: ptex2pdf",
-			// 	"command": "ptex2pdf",
-			// 	"args": [
-			// 		"-l",
-			// 		"-ot",
-			// 		"-kanji=utf8 -synctex=1",
-			// 		"%DOCFILE%.tex"
-			// 	]
-			// },
-			// {
-			// 	"name": "Step 4: ptex2pdf",
-			// 	"command": "ptex2pdf",
-			// 	"args": [
-			// 		"-l",
-			// 		"-ot",
-			// 		"-kanji=utf8 -synctex=1",
-			// 		"%DOCFILE%.tex"
-			// 	]
-			// }
 		],
 		"latex-workshop.latex.recipes": [
 			{
@@ -102,21 +64,6 @@
 					"clobber"
 				]
 			}
-		//     {
-		//         "name": "ptex2pdf",
-		//         "tools": [
-		//             "Step 1: ptex2pdf"
-		//         ]
-		//     },
-		//     {
-		//         "name": "toolchain",
-		//         "tools": [
-		//             "Step 1: ptex2pdf",
-		//             "Step 2: pbibtex",
-		//             "Step 3: ptex2pdf",
-		//             "Step 4: ptex2pdf"
-		//         ]
-		//     }
 		],
 		"latex-workshop.view.pdf.viewer": "tab",
 		"editor.renderControlCharacters": true,
