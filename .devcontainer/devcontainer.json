@@ -7,7 +7,7 @@
 	"context": "..",
 
 	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-	"dockerFile": "../Dockerfile",
+	"dockerFile": "./Dockerfile",
 
 	// Uncomment the next line to have VS Code connect as an existing non-root user in the container. 
 	// On Linux, by default, the container user's UID/GID will be updated to match your local user. See
@@ -26,7 +26,102 @@
 		// This will ignore your local shell user setting for Linux since shells like zsh are typically 
 		// not in base container images. You can also update this to an specific shell to ensure VS Code 
 		// uses the right one for terminals and tasks. For example, /bin/bash (or /bin/ash for Alpine).
-		"terminal.integrated.shell.linux": null
+		"terminal.integrated.shell.linux": null,
+
+		// Latex Workshop
+		"latex-workshop.latex.tools": [
+			{
+				"name": "llmk",
+				"command": "llmk"
+			},
+			{
+				"name": "clean",
+				"command": "llmk",
+				"args": [
+					"--clean"
+				]
+			},
+			{
+				"name": "clobber",
+				"command": "llmk",
+				"args": [
+					"--clobber"
+				]
+			}
+			// {
+			// 	"name": "Step 1: ptex2pdf",
+			// 	"command": "ptex2pdf",
+			// 	"args": [
+			// 		"-l",
+			// 		"-ot",
+			// 		"-kanji=utf8 -synctex=1",
+			// 		"%DOCFILE%.tex"
+			// 	]
+			// },
+			// {
+			// 	"name": "Step 2: pbibtex",
+			// 	"command": "pbibtex",
+			// 	"args": [
+			// 		"%DOCFILE%",
+			// 		"-kanji=utf8"
+			// 	]
+			// },
+			// {
+			// 	"name": "Step 3: ptex2pdf",
+			// 	"command": "ptex2pdf",
+			// 	"args": [
+			// 		"-l",
+			// 		"-ot",
+			// 		"-kanji=utf8 -synctex=1",
+			// 		"%DOCFILE%.tex"
+			// 	]
+			// },
+			// {
+			// 	"name": "Step 4: ptex2pdf",
+			// 	"command": "ptex2pdf",
+			// 	"args": [
+			// 		"-l",
+			// 		"-ot",
+			// 		"-kanji=utf8 -synctex=1",
+			// 		"%DOCFILE%.tex"
+			// 	]
+			// }
+		],
+		"latex-workshop.latex.recipes": [
+			{
+				"name": "llmk",
+				"tools": [
+					"llmk",
+					"clean"
+				]
+			},
+			{
+				"name": "llmk clobber",
+				"tools": [
+					"llmk",
+					"clobber"
+				]
+			}
+		//     {
+		//         "name": "ptex2pdf",
+		//         "tools": [
+		//             "Step 1: ptex2pdf"
+		//         ]
+		//     },
+		//     {
+		//         "name": "toolchain",
+		//         "tools": [
+		//             "Step 1: ptex2pdf",
+		//             "Step 2: pbibtex",
+		//             "Step 3: ptex2pdf",
+		//             "Step 4: ptex2pdf"
+		//         ]
+		//     }
+		],
+		"latex-workshop.view.pdf.viewer": "tab",
+		"editor.renderControlCharacters": true,
+		"window.zoomLevel": 0,
+		"latex-workshop.message.update.show": false
 	},
 
 	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
