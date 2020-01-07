@@ -17,6 +17,6 @@ REQUEST=`curl -H "Authorization: token ${GITHUB_TOKEN}" \
 RELEASE_ID=`echo ${REQUEST} | jq ".id"`
 
 curl -H "Authorization: token ${GITHUB_TOKEN}" \
-  -X POST https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets?name=main.pdf \
+  -X POST https://uploads.github.com/repos/${GITHUB_REPOSITORY}/releases/${RELEASE_ID}/assets?name=${TAG_NAME}.pdf \
   --header 'Content-Type: application/pdf' \
   --upload-file texfiles/${FILE_NAME}.pdf
