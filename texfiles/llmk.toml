@@ -1,5 +1,5 @@
 latex = "lualatex"
-source="【調査】プロキシサーバのログを用いたRATの検知.tex"
+source = "【調査】HTTPリクエスト,レスポンスによるマルウェア検知.tex"
 
 [programs.latex]
 command = "lualatex"
