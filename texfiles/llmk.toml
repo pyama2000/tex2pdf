@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【調査】HTTPリクエスト,レスポンスによるマルウェア検知.tex"
+source = "【調査】感染症の接触段階における有効な追跡技術.tex"
 
 [programs.latex]
 command = "lualatex"
