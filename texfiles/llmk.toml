@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【調査】感染症の接触段階における有効な追跡技術.tex"
+source = "【実験】LombScargleピリオドグラムによるShinobot通信の解析.tex"
 
 [programs.latex]
 command = "lualatex"
