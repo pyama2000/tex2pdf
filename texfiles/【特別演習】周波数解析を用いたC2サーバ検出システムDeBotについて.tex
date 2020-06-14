@@ -1,0 +1,52 @@
+\documentclass[twocolumn,9]{ltjsarticle}
+
+\usepackage[top=15mm,bottom=15mm,left=20mm,right=20mm]{geometry}
+\usepackage[haranoaji,nfssonly]{luatexja-preset}
+\usepackage{graphicx}
+
+\title{周波数解析を用いたC2サーバ検出システムDeBotについて}
+\author{19FMI29 山下 尚彦 \\ 指導教員: 寺田 真敏}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{はじめに}
+本調査レポートは4章で構成されており, 2章で調査した論文名とその概要について述べる. 
+3章では論文の新規性や有効性を評価し, 4章でそれに対する考察を行う. 
+
+\section{調査内容}
+本章では調査した論文について述べる. 
+
+\subsection{調査論文名}
+今回調査した論文はSrindarらが発表した「DeBot: A novel network‐based mechanism to detect exfiltration 
+by architectural stealthy botnets」\cite{venkatesan2018debot}である. 
+
+\subsection{論文概要}
+攻撃者は, ボットネットと呼ばれるマルウェアに感染した端末で構成された独自のネットワークを用いて
+DDoS攻撃や機密データの窃取などを行う. ボットネットのアーキテクチャは従来の中央集中型のネットワークから
+検出を回避しボットネットを維持, またはすぐに復元できるようにP2Pを利用したアーキテクチャに移行しつつある. 
+
+そこで, Srindarらはルータやスイッチなどのノードで通信を監視し, ボットネットの可能性がある端末を検出し, 
+さらにその不審な端末から送信された通信を周波数解析を行うことでネットワーク内のボットネットを検出するシステム, 
+DeBotを提案した. 
+
+\section{新規性(オリジナリティ), 有効性の評価方法}
+Srindarらが提案したDeBotでは, ボットネットの通信を推定するためにOPTICSアルゴリズム\cite{ankerst1999optics}を用いて
+クラスタリングし, ボットネットの通信と通常の通信の違いを利用してボットネットの疑いがある端末を検出する. 
+そして, 検出した端末の通信をLomb-Scargleピリオドグラム\cite{vanderplas2018understanding}で解析し, 
+ボットネットかどうか判断する. 
+
+実験の結果, 従来のボットネットアーキテクチャ（中央集中型）に対しては95\%の確率でボットネットを検出でき, 
+P2Pを用いたアーキテクチャに対して単純なものでは従来のアーキテクチャと同程度の検出率を出し, 
+より複雑なアーキテクチャを採用したボットネットに対しては平均65\%程度の検出率にとどまった. 
+
+\section{考察}
+Srindarらのシステムは, ネットワーク内の端末を通信やネットワークの特性によってクラスタリングすることでボットネットを
+検出していたが, 同一ネットワークにマルウェアが感染した場合, ボットネットの検出率が下がってしまう可能性がある. 
+また, C2サーバとの通信を周期的ではなく通常の通信のように不定間隔で行った場合もその検出率が下がってしまうのではないかと
+考えられる. 
+
+\bibliographystyle{junsrt}
+\bibliography{DB}
+\end{document}
