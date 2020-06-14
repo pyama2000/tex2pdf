@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【特別演習】周波数解析を用いたC2サーバ検出システムDeBotについて.tex"
+source = "【特別演習】周波数解析を用いたボットネット検出システムDeBotについて.tex"
 
 [programs.latex]
 command = "lualatex"
