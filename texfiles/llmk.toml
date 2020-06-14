@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【実験】LombScargleピリオドグラムによるBOS2016の解析.tex"
+source = "【特別演習】発表梗概.tex"
 
 [programs.latex]
 command = "lualatex"
