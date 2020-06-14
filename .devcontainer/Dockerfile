@@ -48,9 +48,3 @@ RUN \
     # Install llmk
       wget -q -O /usr/local/bin/llmk https://raw.githubusercontent.com/wtsnjp/llmk/master/llmk.lua && \
       chmod +x /usr/local/bin/llmk
-
-VOLUME ["/usr/local/texlive/${TL_VERSION}/texmf-var/luatex-cache"]
-
-WORKDIR /workdir
-
-CMD ["llmk"]
