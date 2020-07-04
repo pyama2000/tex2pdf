@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【特別演習】周波数分析によるワームの周期性特性について.tex"
+source = "【特別演習】Miraiボットネットについて.tex"
 
 [programs.latex]
 command = "lualatex"
