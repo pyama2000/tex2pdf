@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【特別演習】ボットネットの通信特性について.tex"
+source = "【特別演習】各論文と自己の研究の関係について.tex"
 
 [programs.latex]
 command = "lualatex"

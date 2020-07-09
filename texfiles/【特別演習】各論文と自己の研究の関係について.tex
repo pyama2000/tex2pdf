@@ -1,0 +1,108 @@
+\documentclass[twocolumn,9]{ltjsarticle}
+
+\usepackage[top=15mm,bottom=15mm,left=20mm,right=20mm]{geometry}
+\usepackage[haranoaji,nfssonly]{luatexja-preset}
+\usepackage{graphicx}
+
+\title{各論文と自己の研究の関係について}
+\author{19FMI29 山下 尚彦 \\ 指導教員: 寺田 真敏}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{はじめに}
+本レポートは3章で構成されており, 2章では調査を行った論文について述べる. 
+3章では各調査論文と自己の研究との違いや関連性について記す. 
+
+\section{調査論文の内容}
+本章では調査を行った論文のタイトル一覧と各論文の関係性について述べる. 
+
+\subsection{調査論文一覧}
+以下の6つが今回レポートのために調査を行った論文である. 
+
+\begin{enumerate}
+  \item
+    DeBot: A novel network ‐ based mechanism to detect exfiltration by architectural stealthy botnets
+    \cite{venkatesan2018debot}
+  \item
+    Analysis of P2P, IRC and HTTP traffic for botnets detection
+    \cite{assadhan2018analysis}
+  \item
+    周波数分析に基づくインシデント傾向検知手法に関する検討
+    \cite{仲小路博史2005周波数分析に基づくインシデント傾向検知手法に関する検討}
+  \item
+    Understanding the Mirai Botnet
+    \cite{antonakakis2017understanding}
+  \item
+    C\&Cトラフィック分類のための機械学習手法の評価
+    \cite{山内一将2015c}
+  \item
+    Botnet Communication Patterns
+    \cite{vormayr2017botnet}
+\end{enumerate}
+
+英語論文は\cite{venkatesan2018debot}, \cite{assadhan2018analysis}, \cite{antonakakis2017understanding},
+\cite{vormayr2017botnet}の4つで, 残りは日本語論文である. 
+
+\subsection{論文間の関係性}
+調査した論文は大きく分けて2種類あり, 1つ目はボットネットに関する調査で, 
+Antonakakisらの論文\cite{antonakakis2017understanding}とVormayrらの論文\cite{vormayr2017botnet}がそうである. 
+論文\cite{antonakakis2017understanding}は2016年後半に猛威を振るったMiraiボットネットの調査論文で, 
+インターネットに公開されたソースコードから構造と感染に至る手順, 攻撃時のボットやC2サーバの挙動について詳細に
+分析を行った. 同様に, 論文\cite{vormayr2017botnet}は近年のボットネットの構造や運用, 
+通信プロトコルなどのネットワーク周辺の変化について分析し, その実装方法や実際のボットネットの例を挙げて
+今後の研究の基礎になるように調査を行った. 
+
+2つ目はそのボットネットを検出する手法の提案を行っている論文である. 
+その中でも, Venkatesanらの論文\cite{venkatesan2018debot}とAsSadhanらの論文\cite{assadhan2018analysis}, 
+仲小路らの論文\cite{仲小路博史2005周波数分析に基づくインシデント傾向検知手法に関する検討}は
+C2サーバとボットネットが行う通信を周波数解析によってその周期性を検出することでボットネットの検知する手法を提案している. 
+山内らの論文\cite{山内一将2015c}も同様に, C2サーバのトラフィックからボットネットの検知手法についての論文ではあるが, 
+上記3つの論文とは違い, ボットネットの形成から攻撃までのライフサイクルすべてのトラフィックを機械学習で分類するという
+手法をとっている. また, 3種類の機械学習によって分類分けし, その検出精度や実行速度の比較を行った. 
+
+\section{自己の研究との比較}
+本章では各調査論文と自己の研究との関係性や違いについて述べる. 
+
+\subsection{論文\cite{venkatesan2018debot}との違い}
+Venkatesanらの研究では, ボットネットのトラフィックを推定するためにOPTICSアルゴリズムを用いてクラスタリングし, 
+ボットネットと通常のトラフィックの違いを利用してネットワーク内からボットの疑いのある端末を検出し, さらに, 
+Lomb-Scargleピリオドグラムによってその端末のトラフィックを周波数解析し, ボットかどうかを確定する手法を提案した. 
+
+私の研究ではLomb-Scargleピリオドグラムでネットワーク全体のトラフィックを周波数解析するだけなので, 
+通常のアプリケーションなどが行う周期的な通信とボットネットの周期的な通信を区別することができない. 
+そのため, Venkatesanらのような誤検知を防ぐ機構を実装することで, 
+より実用性のあるボットネット検出システムの提案ができると考えられる. 
+
+\subsection{論文\cite{assadhan2018analysis}と
+論文\cite{仲小路博史2005周波数分析に基づくインシデント傾向検知手法に関する検討}との違い}
+AsSadhanらの研究と仲小路らの研究はどちらもネットワークトラフィックを周波数解析し, 
+ボットネットのC2サーバの周期的な通信を検出する手法の提案を行っている. 
+AsSadhanらはC2サーバがボットネットと通信する際に使われるIRC, HTTP, P2Pプロトコルのトラフィックを監視し, 
+ピリオドグラムによって周期性の検出をおこなった. また, 仲小路らも実際に4種類のマルウェアを用いて実験を行い, 
+それぞれのマルウェアが通信に使用するポート上のトラフィックを収集し, 高速フーリエ変換（FFT）によって周波数解析を行った. 
+どちらの実験でもボットネットの通信を検出することができたが, HTTPを利用したトラフィックは他のアプリケーションの通信によって
+ボットネットの通信が秘匿されたり, UDPを使ったものに関しては検出することができなかったりした. 
+
+そこで私の研究では, ポート番号で通信をフィルタリングするのではなく, 送信元と受信先のIPアドレス毎に通信を
+グループ分けすることで他のアプリケーションの通信による影響を受けにくくすることで課題を解決したいと思う. 
+また, 周波数解析に間隔が一定でない信号であっても周期性を検出できるLomb-Scargleピリオドグラムを用いて, 
+ボットネットとC2サーバのトラフィックを検出したいと思う. 
+
+\subsection{論文\cite{山内一将2015c}との違い}
+山内らの研究は私の研究とは違い, 機械学習を用いたボットネットトラフィックの検出を目的としている. 
+山内らの論文内で検出精度や実行速度に関して言及しているため, Lomb-Scargleピリオドグラムによる周波数解析との
+精度や速度について比較することができるため, 評価の指標にしたいと思う. 
+
+\subsection{論文\cite{antonakakis2017understanding}と論文\cite{vormayr2017botnet}との関係性}
+AntonakakisらとVormayrらはボットネットとC2サーバの構造や感染拡大のプロセス, 感染時のC2サーバとの接続の際の
+挙動などを分析し論文にまとめた. また, 標的にされやすい端末や地域などについても詳細に言及し, 
+今後のボットネット対策につながるような調査を行った. 
+特に, Vormayrらの論文に記述されていたボットネットが通信の際に使用するプロトコルやボットネットトラフィックの
+隠蔽技術, 通信パターンに関する分析は私の研究で今後, 通常のトラフィックとボットネットのトラフィックを区別する上で
+大いに参考になると考えられる. 
+
+\bibliographystyle{junsrt}
+\bibliography{DB}
+\end{document}
