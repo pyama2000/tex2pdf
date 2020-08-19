@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     container: pyama0327/lualatex-haranoaji-llmk
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Create PDF from TeX files
       run: llmk
       working-directory: ./texfiles
