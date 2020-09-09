@@ -14,6 +14,8 @@ jobs:
     container: pyama0327/lualatex-haranoaji-llmk
     steps:
     - uses: actions/checkout@v2
+      with:
+        ref: master
     - name: Create PDF from TeX files
       run: llmk
       working-directory: ./texfiles
