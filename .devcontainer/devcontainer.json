@@ -27,6 +27,7 @@
 		// not in base container images. You can also update this to an specific shell to ensure VS Code 
 		// uses the right one for terminals and tasks. For example, /bin/bash (or /bin/ash for Alpine).
 		"terminal.integrated.shell.linux": null,
+		"editor.wordWrap": "on",
 
 		// Latex Workshop
 		"latex-workshop.latex.tools": [
