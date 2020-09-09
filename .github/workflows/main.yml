@@ -17,9 +17,7 @@ jobs:
       with:
         ref: master
     - name: Create PDF from TeX files
-      run: |
-        ls -la images/【実験】LombScargleピリオドグラムによるShinobot通信の解析
-        llmk
+      run: llmk
       working-directory: ./texfiles
     - name: Remove temporary files
       run: llmk --clean
