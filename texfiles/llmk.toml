@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【実験】LombScargleピリオドグラムによるBOS2016の解析2.tex"
+source = "【M2中間発表】周期的な通信によるボットネット検出と対処優先度決定手法の提案.tex"
 
 [programs.latex]
 command = "lualatex"
