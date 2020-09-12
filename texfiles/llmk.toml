@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【M2中間発表】周期的な通信によるボットネット検出と対処優先度決定手法の提案.tex"
+source = "【実験】BOS_2016の周期分析結果の比較.tex"
 
 [programs.latex]
 command = "lualatex"
