@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【実験】BOS_2016の周期分析結果の比較.tex"
+source = "【実験】通信時間の粒度を高めたデータでの周期分析結果.tex"
 
 [programs.latex]
 command = "lualatex"
