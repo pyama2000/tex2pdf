@@ -28,6 +28,11 @@
 		// uses the right one for terminals and tasks. For example, /bin/bash (or /bin/ash for Alpine).
 		"terminal.integrated.shell.linux": null,
 		"editor.wordWrap": "on",
+		// Switch input method
+    	"vim.autoSwitchInputMethod.enable": true,
+    	"vim.autoSwitchInputMethod.defaultIM": "com.google.inputmethod.Japanese.Roman",
+    	"vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+    	"vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
 
 		// Latex Workshop
 		"latex-workshop.latex.tools": [

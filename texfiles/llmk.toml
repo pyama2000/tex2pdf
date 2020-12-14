@@ -1,5 +1,5 @@
 latex = "lualatex"
-source = "【実験】通信時間の粒度を高めたデータでの周期分析結果.tex"
+source = "【実験】周期的な通信とステータスコードの関係について.tex"
 
 [programs.latex]
 command = "lualatex"
